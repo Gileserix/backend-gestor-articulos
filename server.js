@@ -5,7 +5,16 @@ const cors = require("cors");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+// Configurar CORS con opciones específicas
+const corsOptions = {
+  origin: 'https://gestor-articulos.vercel.app/', // Reemplaza con el dominio permitido
+  optionsSuccessStatus: 200,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type,Authorization"
+};
+
+app.use(cors(corsOptions));
 
 // Conectar a MongoDB
 mongoose.connect(process.env.MONGO_URI, {
