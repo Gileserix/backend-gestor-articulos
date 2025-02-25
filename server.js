@@ -8,7 +8,7 @@ app.use(express.json());
 
 // Configurar CORS con opciones específicas
 const corsOptions = {
-  origin: 'https://gestor-articulos.vercel.app/', // Reemplaza con el dominio permitido
+  origin: '*', // Reemplaza con el dominio permitido
   optionsSuccessStatus: 200,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: "Content-Type,Authorization"
